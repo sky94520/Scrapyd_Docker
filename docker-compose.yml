@@ -1,0 +1,9 @@
+version: "2.2"
+services:
+   detail:
+     build: .
+     volumes:
+       - .:/opt
+     ports:
+       - "6800:6800"
+       - "6801:6801"
