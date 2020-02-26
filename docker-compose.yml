@@ -1,9 +1,13 @@
 version: "2.2"
 services:
-   detail:
+   scrapyd:
      build: .
+     image: scrapyd
      volumes:
        - .:/opt
+   nginx:
+     build: ./nginx
      ports:
        - "6800:6800"
-       - "6801:6801"
+     links:
+       - "scrapyd:scrapyd"
